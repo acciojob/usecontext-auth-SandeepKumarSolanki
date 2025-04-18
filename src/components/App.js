@@ -11,10 +11,10 @@ const App = () => {
       {/* <AuthContexProvider> */}
         <h1>Click on the checkbox to get authenticated</h1>
       {btn ? (
-        <p>You are now authenticated , you can proceed</p>
+        <p className="authText">You are now authenticated , you can proceed</p>
        
       ) : (
-        <p>You are not authenticated</p>
+        <p>you are not authenticated</p>
       )}
       <input type="checkbox" name="checkbox" onClick={()=>setBtn(true)}/>
       <label htmlFor="checkbox">I'm not a robot</label>
