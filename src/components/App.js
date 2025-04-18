@@ -1,11 +1,24 @@
 
-import React from "react";
-import './../styles/App.css';
-
+import React, { useContext } from "react";
+// import AuthContexProvider from "../context/AuthContexProvider";
+import AuthContext from "../context/AuthContext";
 const App = () => {
+
+  let {btn , setBtn} = useContext(AuthContext);
+
   return (
     <div>
-        {/* Do not remove the main div */}
+      {/* <AuthContexProvider> */}
+        <h1>Click on the checkbox to get authenticated</h1>
+      {btn ? (
+        <p>You are now authenticated , you can proceed</p>
+       
+      ) : (
+        <p>You are not authenticated</p>
+      )}
+      <input type="checkbox" name="checkbox" onClick={()=>setBtn(true)}/>
+      <label htmlFor="checkbox">I'm not a robot</label>
+      {/* </AuthContexProvider> */}
     </div>
   )
 }
